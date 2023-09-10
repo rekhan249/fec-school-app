@@ -1,3 +1,4 @@
+import 'package:fec_app2/screen_pages/dashboard.dart';
 import 'package:fec_app2/widgets/class_grade.dart';
 import 'package:fec_app2/widgets/curved_botton.dart';
 import 'package:fec_app2/widgets/name_field.dart';
@@ -63,6 +64,18 @@ class _ChildInformationState extends State<ChildInformation> {
                                   height: 211.h,
                                   width: 400.w,
                                 )),
+                            Positioned(
+                                top: 0.h,
+                                left: 0.w,
+                                child: IconButton(
+                                    onPressed: () {
+                                      Navigator.popAndPushNamed(
+                                          context, DashBoard.routeName);
+                                    },
+                                    icon: const Icon(
+                                      Icons.arrow_back_ios,
+                                      color: Colors.white,
+                                    ))),
                           ],
                         ),
                       ),
