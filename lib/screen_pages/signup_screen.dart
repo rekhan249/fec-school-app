@@ -63,18 +63,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
             children: [
               Stack(
                 children: [
-                  Center(
-                      child: Image.asset(
-                    'assets/images/mainpage.png',
-                  )),
+                  Center(child: Image.asset('assets/images/mainpage.png')),
                   Padding(
-                    padding: EdgeInsets.only(top: 260.h),
-                    child: Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20.r)),
-                      elevation: 20,
-                      child: Form(
-                        key: _formKey,
+                    padding: EdgeInsets.only(top: 290.h),
+                    child: Form(
+                      key: _formKey,
+                      child: Card(
+                        color: Colors.white,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.r)),
                         child: Column(
                           children: [
                             SizedBox(height: 20.h),

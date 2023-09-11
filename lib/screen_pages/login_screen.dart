@@ -54,18 +54,13 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             children: [
               Stack(children: [
-                Center(
-                    child: Image.asset(
-                  'assets/images/mainpage.png',
-                )),
+                Center(child: Image.asset('assets/images/mainpage.png')),
                 Padding(
                   padding: EdgeInsets.only(top: 300.h),
                   child: Form(
                     key: _formKey,
                     child: Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20.r)),
-                      elevation: 20,
+                      color: Colors.white,
                       child: Column(
                         children: [
                           SizedBox(height: 20.h),

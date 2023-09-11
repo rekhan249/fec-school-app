@@ -25,16 +25,13 @@ class _ResetPasswordState extends State<ResetPassword> {
             children: [
               Stack(
                 children: [
-                  Center(
-                      child: Image.asset(
-                    'assets/images/mainpage.png',
-                  )),
+                  Center(child: Image.asset('assets/images/mainpage.png')),
                   Padding(
                     padding: EdgeInsets.only(top: 280.h),
                     child: Card(
+                      color: Colors.white,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20.r)),
-                      elevation: 20,
                       child: Column(
                         children: [
                           SizedBox(height: 150.h),

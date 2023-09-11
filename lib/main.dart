@@ -3,8 +3,6 @@ import 'package:fec_app2/providers/password_provider.dart';
 import 'package:fec_app2/providers/signup_provider.dart';
 import 'package:fec_app2/providers/switching_provvider.dart';
 import 'package:fec_app2/routes_manage/page_route.dart';
-import 'package:fec_app2/screen_pages/dashboard.dart';
-import 'package:fec_app2/screen_pages/events.dart';
 import 'package:fec_app2/screen_pages/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
