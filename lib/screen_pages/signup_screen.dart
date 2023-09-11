@@ -64,143 +64,155 @@ class _SignUpScreenState extends State<SignUpScreen> {
               Stack(
                 children: [
                   Center(child: Image.asset('assets/images/mainpage.png')),
-                  Padding(
-                    padding: EdgeInsets.only(top: 290.h),
-                    child: Form(
-                      key: _formKey,
-                      child: Card(
-                        color: Colors.white,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.r)),
-                        child: Column(
-                          children: [
-                            SizedBox(height: 20.h),
-                            Container(
-                              decoration: BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10.r)),
-                                  color:
-                                      const Color.fromARGB(255, 25, 74, 159)),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Consumer<SwitchingProvider>(
-                                  builder: (context, sp, child) => ToggleSwitch(
-                                    activeBgColor: const [Colors.amber],
-                                    cornerRadius: 20,
-                                    radiusStyle: true,
-                                    inactiveBgColor:
-                                        const Color.fromARGB(255, 25, 74, 159),
-                                    initialLabelIndex: sp.isValue,
-                                    totalSwitches: 2,
-                                    labels: const ['Login', 'SignUp'],
-                                    customTextStyles: const [
-                                      TextStyle(color: Colors.white)
-                                    ],
-                                    onToggle: (index) {
-                                      sp.isSwitching(index);
-                                      if (index == 0) {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    const LoginScreen()));
-                                      }
-                                    },
+                  Form(
+                    key: _formKey,
+                    child: Padding(
+                      padding: EdgeInsets.only(top: 280.h),
+                      child: Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(25.r),
+                              topRight: Radius.circular(25.r)),
+                        ),
+                        child: Card(
+                          elevation: 0,
+                          color: Colors.white,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.r)),
+                          child: Column(
+                            children: [
+                              SizedBox(height: 20.h),
+                              Container(
+                                decoration: BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10.r)),
+                                    color:
+                                        const Color.fromARGB(255, 25, 74, 159)),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Consumer<SwitchingProvider>(
+                                    builder: (context, sp, child) =>
+                                        ToggleSwitch(
+                                      activeBgColor: const [Colors.amber],
+                                      cornerRadius: 20,
+                                      radiusStyle: true,
+                                      inactiveBgColor: const Color.fromARGB(
+                                          255, 25, 74, 159),
+                                      initialLabelIndex: sp.isValue,
+                                      totalSwitches: 2,
+                                      labels: const ['Login', 'SignUp'],
+                                      customTextStyles: const [
+                                        TextStyle(color: Colors.white)
+                                      ],
+                                      onToggle: (index) {
+                                        sp.isSwitching(index);
+                                        if (index == 0) {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const LoginScreen()));
+                                        }
+                                      },
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                            SizedBox(height: 20.h),
-                            Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 10.w),
-                              child: NameField(
-                                nameController: _nameController,
-                                hintText: 'Enter full name',
-                                labelText: 'Name',
+                              SizedBox(height: 20.h),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 10.w),
+                                child: NameField(
+                                  nameController: _nameController,
+                                  hintText: 'Enter full name',
+                                  labelText: 'Name',
+                                ),
                               ),
-                            ),
-                            SizedBox(height: 20.h),
-                            Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 10.w),
-                              child: EmailField(
-                                emailController: _emailController,
-                                hintText: 'Enter email here',
-                                labelText: 'Email Address',
+                              SizedBox(height: 20.h),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 10.w),
+                                child: EmailField(
+                                  emailController: _emailController,
+                                  hintText: 'Enter email here',
+                                  labelText: 'Email Address',
+                                ),
                               ),
-                            ),
-                            SizedBox(height: 20.h),
-                            Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 10.w),
-                              child: Consumer<PasswordProvider>(
-                                  builder: ((context, pp, child) =>
-                                      PasswordField(
-                                        passwordController: _passwordController,
-                                        passwordProvider: passwordProvider,
-                                        hintText: 'Enter password',
-                                        labelText: 'Password',
-                                      ))),
-                            ),
+                              SizedBox(height: 20.h),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 10.w),
+                                child: Consumer<PasswordProvider>(
+                                    builder: ((context, pp, child) =>
+                                        PasswordField(
+                                          passwordController:
+                                              _passwordController,
+                                          passwordProvider: passwordProvider,
+                                          hintText: 'Enter password',
+                                          labelText: 'Password',
+                                        ))),
+                              ),
 
-                            SizedBox(height: 30.h),
-                            SizedBox(
-                                height: 50.h,
-                                width: double.infinity.w,
-                                child: Padding(
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 10.w),
-                                  child: TextButton(
-                                      // resume when use
-                                      // onPressed: () =>
-                                      //     _submitSignUpForm(context),
-                                      onPressed: () {
-                                        Navigator.pushNamed(
-                                            context, ResetPassword.routeName);
-                                      },
-                                      style: ButtonStyle(
-                                          backgroundColor:
-                                              MaterialStateProperty.all(
-                                                  const Color.fromARGB(
-                                                      255, 25, 74, 159))),
-                                      child: Text('Sign Up',
-                                          style: TextStyle(
-                                              fontSize: 17.sp,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.white))),
-                                )),
-                            SizedBox(height: 20.h),
-                            // Padding(
-                            //   padding: const EdgeInsets.all(15),
-                            //   child: Align(
-                            //     alignment: Alignment.center,
-                            //     child: RichText(
-                            //       text: TextSpan(
-                            //         children: [
-                            //           TextSpan(
-                            //             text: 'Allready have an account!',
-                            //             style: TextStyle(
-                            //               color: Colors.black,
-                            //               fontWeight: FontWeight.bold,
-                            //               fontSize: 16.sp,
-                            //             ),
-                            //           ),
-                            //           TextSpan(
-                            //               text: 'Login',
-                            //               style: TextStyle(
-                            //                   color: Colors.red,
-                            //                   fontWeight: FontWeight.bold,
-                            //                   fontSize: 18.sp),
-                            //               recognizer: TapGestureRecognizer()
-                            //                 ..onTap = () => Navigator.push(
-                            //                     context,
-                            //                     MaterialPageRoute(
-                            //                         builder: (context) =>
-                            //                             const LoginScreen())))
-                            //         ],
-                            //       ),
-                            //     ),
-                            //   ),
-                            // ),
-                          ],
+                              SizedBox(height: 30.h),
+                              SizedBox(
+                                  height: 50.h,
+                                  width: double.infinity.w,
+                                  child: Padding(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 10.w),
+                                    child: TextButton(
+                                        // resume when use
+                                        // onPressed: () =>
+                                        //     _submitSignUpForm(context),
+                                        onPressed: () {
+                                          Navigator.pushNamed(
+                                              context, ResetPassword.routeName);
+                                        },
+                                        style: ButtonStyle(
+                                            backgroundColor:
+                                                MaterialStateProperty.all(
+                                                    const Color.fromARGB(
+                                                        255, 25, 74, 159))),
+                                        child: Text('Sign Up',
+                                            style: TextStyle(
+                                                fontSize: 17.sp,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white))),
+                                  )),
+                              SizedBox(height: 20.h),
+                              // Padding(
+                              //   padding: const EdgeInsets.all(15),
+                              //   child: Align(
+                              //     alignment: Alignment.center,
+                              //     child: RichText(
+                              //       text: TextSpan(
+                              //         children: [
+                              //           TextSpan(
+                              //             text: 'Allready have an account!',
+                              //             style: TextStyle(
+                              //               color: Colors.black,
+                              //               fontWeight: FontWeight.bold,
+                              //               fontSize: 16.sp,
+                              //             ),
+                              //           ),
+                              //           TextSpan(
+                              //               text: 'Login',
+                              //               style: TextStyle(
+                              //                   color: Colors.red,
+                              //                   fontWeight: FontWeight.bold,
+                              //                   fontSize: 18.sp),
+                              //               recognizer: TapGestureRecognizer()
+                              //                 ..onTap = () => Navigator.push(
+                              //                     context,
+                              //                     MaterialPageRoute(
+                              //                         builder: (context) =>
+                              //                             const LoginScreen())))
+                              //         ],
+                              //       ),
+                              //     ),
+                              //   ),
+                              // ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
