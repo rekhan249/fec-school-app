@@ -52,10 +52,9 @@ class _DashBoardState extends State<DashBoard> {
                                 height: 211.h,
                                 width: 400.w,
                                 child: Image.asset(
-                                  'assets/images/dashboard.png',
-                                  fit: BoxFit.cover,
-                                  alignment: const FractionalOffset(0, -0.5),
-                                ),
+                                    'assets/images/dashboard.png',
+                                    fit: BoxFit.cover,
+                                    alignment: const FractionalOffset(0, -0.5)),
                               ),
                               Positioned(
                                   top: 0,

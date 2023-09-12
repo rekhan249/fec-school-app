@@ -45,8 +45,7 @@ class _EventTitleState extends State<EventTitle> {
             child: Column(
           children: [
             ClipPath(
-              clipper: StraightBorderClipper(
-                  borderWidth: 0), // Adjust the border width as needed
+              clipper: StraightBorderClipper(borderWidth: 0),
               child: Container(
                 height: 10.h,
                 width: double.infinity.w,
