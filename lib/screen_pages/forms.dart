@@ -127,7 +127,12 @@ class _FormScreenState extends State<FormScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 30.h),
+              SizedBox(height: 10.h),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                child: const Divider(color: Colors.black26),
+              ),
+              SizedBox(height: 10.h),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
                 child: GestureDetector(
@@ -165,7 +170,12 @@ class _FormScreenState extends State<FormScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 30.h),
+              SizedBox(height: 10.h),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                child: const Divider(color: Colors.black26),
+              ),
+              SizedBox(height: 10.h),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
                 child: GestureDetector(

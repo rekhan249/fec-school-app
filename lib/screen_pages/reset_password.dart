@@ -59,7 +59,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                                 width: double.infinity.w,
                                 child: Padding(
                                   padding:
-                                      EdgeInsets.symmetric(horizontal: 10.w),
+                                      EdgeInsets.symmetric(horizontal: 60.w),
                                   child: TextButton(
                                       onPressed: () {
                                         Navigator.pushNamed(

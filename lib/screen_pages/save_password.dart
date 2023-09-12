@@ -81,7 +81,7 @@ class _SavePasswordState extends State<SavePassword> {
                                 width: double.infinity.w,
                                 child: Padding(
                                   padding:
-                                      EdgeInsets.symmetric(horizontal: 10.w),
+                                      EdgeInsets.symmetric(horizontal: 60.w),
                                   child: TextButton(
                                       onPressed: () {
                                         Navigator.pushNamed(

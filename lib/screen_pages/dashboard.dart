@@ -103,10 +103,8 @@ class _DashBoardState extends State<DashBoard> {
                           ),
                           child: IconButton(
                               onPressed: () {},
-                              icon: Image.asset(
-                                'assets/images/phone.png',
-                                color: Colors.white,
-                              )),
+                              icon: Image.asset('assets/images/phone.png',
+                                  color: Colors.white)),
                         ),
                       ),
                       Positioned(

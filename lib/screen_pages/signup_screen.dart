@@ -158,7 +158,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   width: double.infinity.w,
                                   child: Padding(
                                     padding:
-                                        EdgeInsets.symmetric(horizontal: 10.w),
+                                        EdgeInsets.symmetric(horizontal: 60.w),
                                     child: TextButton(
                                         // resume when use
                                         // onPressed: () =>
