@@ -54,11 +54,17 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             children: [
               Stack(children: [
-                Image.asset(
-                  'assets/images/mainpage.png',
-                  height: 400,
-                  fit: BoxFit.cover,
-                ),
+                Image.asset('assets/images/mainpage.png',
+                    height: 380, fit: BoxFit.cover),
+                Positioned(
+                    top: 0,
+                    left: 0,
+                    child: Container(
+                      color: const Color.fromARGB(255, 25, 74, 159)
+                          .withOpacity(0.5),
+                      height: 400.h,
+                      width: 400.w,
+                    )),
                 Form(
                   key: _formKey,
                   child: Padding(
