@@ -50,7 +50,7 @@ class _ChildInformationState extends State<ChildInformation> {
                               height: 203.h,
                               width: 400.w,
                               child: Image.asset(
-                                'assets/images/other.jpg',
+                                'assets/images/dashboard.png',
                                 fit: BoxFit.cover,
                                 alignment: const FractionalOffset(1.5, 0.5),
                               ),
@@ -64,6 +64,13 @@ class _ChildInformationState extends State<ChildInformation> {
                                   height: 211.h,
                                   width: 400.w,
                                 )),
+                            Positioned(
+                                left: 80,
+                                child: Center(
+                                    child: Image.asset(
+                                        'assets/images/mainslogo.png',
+                                        height: 180.h,
+                                        width: 180.w))),
                             Positioned(
                                 top: 0.h,
                                 left: 0.w,

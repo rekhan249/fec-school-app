@@ -64,7 +64,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
               Stack(
                 children: [
                   Image.asset('assets/images/mainpage.png',
-                      height: 380, fit: BoxFit.cover),
+                      alignment: const FractionalOffset(0, 2),
+                      height: 380,
+                      fit: BoxFit.cover),
                   Positioned(
                       top: 0,
                       left: 0,
@@ -73,6 +75,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               .withOpacity(0.5),
                           height: 400.h,
                           width: 400.w)),
+                  Positioned(
+                      child: Center(
+                          child: Image.asset('assets/images/mainslogo.png',
+                              height: 300.h, width: 220.w))),
                   Form(
                     key: _formKey,
                     child: Padding(
