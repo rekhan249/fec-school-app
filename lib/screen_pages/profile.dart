@@ -76,7 +76,7 @@ class _ProfileInfoState extends State<ProfileInfo> {
                                     child: Image.asset(
                                         'assets/images/mainslogo.png',
                                         height: 180.h,
-                                        width: 180.w))),
+                                        width: 200.w))),
                             Positioned(
                                 top: 0.h,
                                 left: 0.w,
