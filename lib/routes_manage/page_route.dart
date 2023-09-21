@@ -24,7 +24,10 @@ Route<dynamic> generateRoutes(RouteSettings settings) {
     case SavePassword.routeName:
       return MaterialPageRoute(builder: (context) => const SavePassword());
     case DashBoard.routeName:
-      return MaterialPageRoute(builder: (context) => const DashBoard());
+      return MaterialPageRoute(
+          builder: (context) => const DashBoard(
+                token: null,
+              ));
     case NoticesScreen.routeName:
       return MaterialPageRoute(builder: (context) => const NoticesScreen());
     case NoticeTitle.routeName:
@@ -44,6 +47,6 @@ Route<dynamic> generateRoutes(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => const ProfileInfo());
 
     default:
-      return MaterialPageRoute(builder: (context) => const DashBoard());
+      return MaterialPageRoute(builder: (context) => const LoginScreen());
   }
 }

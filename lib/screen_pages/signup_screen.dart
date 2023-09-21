@@ -2,7 +2,6 @@ import 'package:fec_app2/providers/password_provider.dart';
 import 'package:fec_app2/providers/signup_provider.dart';
 import 'package:fec_app2/providers/switching_provvider.dart';
 import 'package:fec_app2/screen_pages/login_screen.dart';
-import 'package:fec_app2/screen_pages/reset_password.dart';
 import 'package:fec_app2/widgets/email_field.dart';
 import 'package:fec_app2/widgets/name_field.dart';
 import 'package:fec_app2/widgets/password_field.dart';
@@ -175,13 +174,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     padding:
                                         EdgeInsets.symmetric(horizontal: 60.w),
                                     child: TextButton(
-                                        // resume when use
-                                        // onPressed: () =>
-                                        //     _submitSignUpForm(context),
-                                        onPressed: () {
-                                          Navigator.pushNamed(
-                                              context, ResetPassword.routeName);
-                                        },
+                                        onPressed: () =>
+                                            _submitSignUpForm(context),
                                         style: ButtonStyle(
                                             backgroundColor:
                                                 MaterialStateProperty.all(

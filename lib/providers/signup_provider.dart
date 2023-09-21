@@ -1,27 +1,38 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'dart:convert';
+
+import 'package:fec_app2/models/user_model_signup.dart';
+import 'package:fec_app2/screen_pages/login_screen.dart';
+import 'package:fec_app2/services.dart/urls_api.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:http/http.dart' as http;
 
 class SignUpProvider with ChangeNotifier {
-  final firebaseFirestore = FirebaseFirestore.instance;
-  final _auth = FirebaseAuth.instance;
   void onSubmittedSignUpForm(
-      BuildContext context, final userName, final email, final password) async {
-    await _auth
-        .createUserWithEmailAndPassword(email: email, password: password)
-        .then((value) {
-      sendDataToFireBase(userName, email, password);
-    }).catchError((e) {
-      Fluttertoast.showToast(msg: e!.message);
-    });
-  }
+      BuildContext context, final username, final email, final password) async {
+    // ignore: unused_local_variable
+    bool isNotValidate = false;
 
-  void sendDataToFireBase(userName, email, password) async {
-    await firebaseFirestore
-        .collection('users')
-        .doc(_auth.currentUser!.uid)
-        .set(<String, dynamic>{});
-    Fluttertoast.showToast(msg: "Account Create Successfully");
+    UserModelSignup? userModelSignup =
+        UserModelSignup(name: username, email: email, password: password);
+
+    var response = await http.post(Uri.parse(registration),
+        headers: {"Content-Type": "application/json"},
+        body: jsonEncode(userModelSignup.toMap()));
+    print(response.body);
+
+    var jsonRespose = jsonDecode(response.body);
+
+    if (jsonRespose['status']) {
+      Fluttertoast.showToast(
+          msg: '${jsonRespose['status']} Account Created Successfully');
+      // ignore: use_build_context_synchronously
+      Navigator.pushNamed(context, LoginScreen.routeName);
+    } else {
+      isNotValidate = true;
+      Fluttertoast.showToast(msg: 'Account is not created yet');
+    }
+
+    notifyListeners();
   }
 }

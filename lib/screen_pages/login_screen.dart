@@ -163,13 +163,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                   padding:
                                       EdgeInsets.symmetric(horizontal: 60.w),
                                   child: TextButton(
-
-                                      /// resume it when use
-                                      // onPressed: () => _submitLoginForm(context),
-                                      onPressed: () {
-                                        Navigator.pushNamed(
-                                            context, SignUpScreen.routeName);
-                                      },
+                                      onPressed: () =>
+                                          _submitLoginForm(context),
                                       style: ButtonStyle(
                                           backgroundColor:
                                               MaterialStateProperty.all(

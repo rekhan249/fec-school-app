@@ -9,7 +9,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DashBoard extends StatefulWidget {
   static const String routeName = '/dashboard';
-  const DashBoard({super.key});
+  // ignore: prefer_typing_uninitialized_variables
+  final token;
+  const DashBoard({super.key, required this.token});
 
   @override
   State<DashBoard> createState() => _DashBoardState();
@@ -17,6 +19,12 @@ class DashBoard extends StatefulWidget {
 
 class _DashBoardState extends State<DashBoard> {
   bool isFinished = false;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
